@@ -6,15 +6,23 @@ pipeline {
         jdk 'jdk 17'
         maven 'maven 3'
     }
+
+
     stages {
-        stage('Checkout') {
+ 
+        stage('Compile') {
             steps {
-                git 'https://github.com/AhmedElbaradie/Boardgame.git'
+                sh "mvn compile"
             }
         }
-        stage('Build') {
+        stage('Test') {
             steps {
-                sh 'mvn clean package'
+                sh "mvn test"
+            }
+        }
+        stage('Package') {
+            steps {
+                sh "mvn package"
             }
         }
     }
