@@ -3,8 +3,8 @@ pipeline {
         label 'slave'
     }
     tools {
-        jdk 'JDK17'
-        maven 'Maven3'
+        jdk 'jdk 17'
+        maven 'maven 3'
     }
     stages {
         stage('Checkout') {
